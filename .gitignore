@@ -67,3 +67,4 @@ go.work.sum
 
 tmp/
 http/
+.air.toml

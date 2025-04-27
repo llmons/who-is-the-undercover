@@ -1,22 +1,22 @@
 package repo
 
-import "github.com/llmons/havefun/internal/base/data"
+import (
+	"github.com/llmons/havefun/internal/base/data"
+	"github.com/llmons/havefun/internal/entity"
+)
 
 type UndercoverRepo struct {
-	data.Data
+	data *data.Data
 }
 
-func NewUndercoverRepo(data data.Data) *UndercoverRepo {
+func NewUndercoverRepo(data *data.Data) *UndercoverRepo {
 	return &UndercoverRepo{
-		Data: data,
+		data: data,
 	}
 }
 
-func(repo *UndercoverRepo) GetAllWords() ([]*Un, error) {
-	var entities []*WITUEntity
-	err := repo.DB.Find(&entities)
-	if err != nil {
-		return nil, err
-	}
-	return entities, nil
+func (repo *UndercoverRepo) GetAllWordPairs() ([]*entity.WordPair, error) {
+	wordPairList := make([]*entity.WordPair, 0)
+	repo.data.DB.Find(&wordPairList)
+	return wordPairList, nil
 }

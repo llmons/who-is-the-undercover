@@ -2,7 +2,10 @@ module github.com/llmons/havefun
 
 go 1.24.2
 
-require github.com/gin-gonic/gin v1.10.0
+require (
+	github.com/gin-gonic/gin v1.10.0
+	xorm.io/xorm v1.3.9
+)
 
 require (
 	github.com/bytedance/sonic v1.13.2 // indirect
@@ -33,5 +36,4 @@ require (
 	google.golang.org/protobuf v1.36.6 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 	xorm.io/builder v0.3.11-0.20220531020008-1bd24a7dc978 // indirect
-	xorm.io/xorm v1.3.9 // indirect
 )

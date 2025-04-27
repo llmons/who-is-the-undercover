@@ -1,6 +1,6 @@
 package entity
 
-type UndercoverEntity struct {
+type WordPair struct {
 	ID        string `xorm:"not null pk autoincr BIGINT(20) id"`
 	CreatedAt string `xorm:"not null default CURRENT_TIMESTAMP TIMESTAMP created_at"`
 	UpdatedAt string `xorm:"not null default CURRENT_TIMESTAMP TIMESTAMP updated_at"`
