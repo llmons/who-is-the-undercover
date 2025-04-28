@@ -1,12 +1,14 @@
 package entity
 
-type WordPair struct {
-	ID        string `xorm:"not null pk autoincr BIGINT(20) id"`
-	CreatedAt string `xorm:"not null default CURRENT_TIMESTAMP TIMESTAMP created_at"`
-	UpdatedAt string `xorm:"not null default CURRENT_TIMESTAMP TIMESTAMP updated_at"`
+import "time"
 
-	CivWord string `xorm:"not null default '' VARCHAR(255) civ_word"`
-	UcWord  string `xorm:"not null default '' VARCHAR(255) uc_word"`
-	Score   int    `xorm:"not null default 0 INT(11) score"`
-	Source  string `xorm:"not null default 'manul' VARCHAR(255) source"`
+type WordPair struct {
+	ID        int64     `xorm:"not null pk autoincr BIGINT(20) id"`
+	CreatedAt time.Time `xorm:"created TIMESTAMP created_at"`
+	UpdatedAt time.Time `xorm:"updated TIMESTAMP updated_at"`
+
+	CivWord string  `xorm:"not null default '' VARCHAR(255) civ_word"`
+	UcWord  string  `xorm:"not null default '' VARCHAR(255) uc_word"`
+	Score   float64 `xorm:"not null default 0 FLOAT score"`
+	Source  string  `xorm:"not null default 'manual' VARCHAR(255) source"`
 }

@@ -16,8 +16,5 @@ func NewAPIRouter(controller *controller.UndercoverController) *APIRouter {
 }
 
 func (a *APIRouter) RegisterRouter(r *gin.RouterGroup) {
-	r.GET("/test", func(c *gin.Context) {
-		c.JSON(200, gin.H{"message": "test"})
-	})
 	r.GET("/undercover/wordpairs", a.controller.GetAllWordPairs)
 }

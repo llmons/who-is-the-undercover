@@ -3,15 +3,13 @@ package main
 import (
 	"fmt"
 
-	"github.com/gin-gonic/gin"
 	"github.com/llmons/who-is-the-undercover/internal/base/conf"
-	"github.com/llmons/who-is-the-undercover/internal/router"
 )
 
 const addr = "localhost:8080"
 
 func main() {
-	c, err := conf.ReadConfig("config.yaml")
+	c, err := conf.ReadConfig("./configs/config.yaml")
 	if err != nil {
 		panic(err)
 	}
@@ -26,11 +24,4 @@ func main() {
 	if err = app.Run(addr); err != nil {
 		panic(err)
 	}
-}
-
-func NewApp(router *router.APIRouter) *gin.Engine {
-	r := gin.Default()
-	group := r.Group("")
-	router.RegisterRouter(group)
-	return r
 }

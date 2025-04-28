@@ -1,4 +1,5 @@
-// go:build wireinject
+//go:build wireinject
+// +build wireinject
 
 package main
 
@@ -7,6 +8,7 @@ import (
 	"github.com/google/wire"
 	"github.com/llmons/who-is-the-undercover/internal/base/conf"
 	"github.com/llmons/who-is-the-undercover/internal/base/data"
+	"github.com/llmons/who-is-the-undercover/internal/base/server"
 	"github.com/llmons/who-is-the-undercover/internal/controller"
 	"github.com/llmons/who-is-the-undercover/internal/repo"
 	"github.com/llmons/who-is-the-undercover/internal/router"
@@ -19,10 +21,10 @@ func initApplication(
 	dbConfig *data.Database,
 ) (*gin.Engine, func(), error) {
 	panic(wire.Build(
+		server.NewHTTPServer,
+		router.ProviderSetRouter,
 		controller.ProviderSetController,
 		service.ProviderSetService,
 		repo.ProviderSetRepo,
-		router.ProviderSetRouter,
-		NewApp,
 	))
 }

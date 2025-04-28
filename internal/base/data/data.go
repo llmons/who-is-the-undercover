@@ -3,6 +3,7 @@ package data
 import (
 	"time"
 
+	_ "github.com/go-sql-driver/mysql"
 	"xorm.io/xorm"
 	ormlog "xorm.io/xorm/log"
 )
