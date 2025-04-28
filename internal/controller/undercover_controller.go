@@ -2,7 +2,7 @@ package controller
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/llmons/havefun/internal/service"
+	"github.com/llmons/who-is-the-undercover/internal/service"
 )
 
 type UndercoverController struct {

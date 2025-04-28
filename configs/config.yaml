@@ -1,0 +1,7 @@
+server:
+  http:
+    addr: 0.0.0.0:80
+data:
+  database:
+    driver: "mysql"
+    connection: "root:123456@tcp(127.0.0.1:3306)/answer?charset=utf8mb4&parseTime=True&loc=Local"

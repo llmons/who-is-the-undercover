@@ -1,8 +1,8 @@
 package repo
 
 import (
-	"github.com/llmons/havefun/internal/base/data"
-	"github.com/llmons/havefun/internal/entity"
+	"github.com/llmons/who-is-the-undercover/internal/base/data"
+	"github.com/llmons/who-is-the-undercover/internal/entity"
 )
 
 type UndercoverRepo struct {

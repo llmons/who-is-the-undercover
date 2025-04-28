@@ -1,7 +1,7 @@
 package service
 
 import (
-	"github.com/llmons/havefun/internal/entity"
+	"github.com/llmons/who-is-the-undercover/internal/entity"
 )
 
 type UndercoverRepo interface {

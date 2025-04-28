@@ -2,7 +2,7 @@ package router
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/llmons/havefun/internal/controller"
+	"github.com/llmons/who-is-the-undercover/internal/controller"
 )
 
 type APIRouter struct {
