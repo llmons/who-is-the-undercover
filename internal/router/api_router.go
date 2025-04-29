@@ -17,4 +17,5 @@ func NewAPIRouter(controller *controller.UndercoverController) *APIRouter {
 
 func (a *APIRouter) RegisterRouter(r *gin.RouterGroup) {
 	r.GET("/undercover/wordpairs", a.controller.GetAllWordPairs)
+	r.GET("/undercover/wordpair/random", a.controller.GetRandomWordPair)
 }

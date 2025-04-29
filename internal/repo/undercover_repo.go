@@ -24,3 +24,12 @@ func (repo *UndercoverRepo) GetAllWordPairs() ([]*entity.WordPair, error) {
 	}
 	return wordPairList, nil
 }
+
+func (repo *UndercoverRepo) GetRandomWordPair() (*entity.WordPair, error) {
+	wordPair := &entity.WordPair{}
+	has, err := repo.data.DB.OrderBy("rand() desc").Limit(1).Get(wordPair)
+	if !has || err != nil {
+		return nil, err
+	}
+	return wordPair, nil
+}

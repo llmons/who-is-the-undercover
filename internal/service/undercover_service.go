@@ -6,6 +6,7 @@ import (
 
 type UndercoverRepo interface {
 	GetAllWordPairs() ([]*entity.WordPair, error)
+	GetRandomWordPair() (*entity.WordPair, error)
 }
 
 type UndercoverService struct {
@@ -24,4 +25,12 @@ func (s *UndercoverService) GetAllWordPairs() ([]*entity.WordPair, error) {
 		return nil, err
 	}
 	return wordPairList, nil
+}
+
+func (s *UndercoverService) GetRandomWordPair() (*entity.WordPair, error) {
+	wordPair, err := s.repo.GetRandomWordPair()
+	if err != nil {
+		return nil, err
+	}
+	return wordPair, nil
 }

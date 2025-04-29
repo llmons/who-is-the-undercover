@@ -23,3 +23,12 @@ func (c *UndercoverController) GetAllWordPairs(ctx *gin.Context) {
 	}
 	ctx.JSON(200, wordPairList)
 }
+
+func (c *UndercoverController) GetRandomWordPair(ctx *gin.Context) {
+	wordPair, err := c.service.GetRandomWordPair()
+	if err != nil {
+		ctx.JSON(500, gin.H{"error": "Internal Server Error"})
+		return
+	}
+	ctx.JSON(200, wordPair)
+}
